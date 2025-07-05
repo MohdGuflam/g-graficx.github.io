@@ -5,9 +5,602 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>g-graficx | YouTube Thumbnail Design</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <!-- Content truncated for brevity in this code cell -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#FF5757", secondary: "#3A3A3A" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      .portfolio-item {
+      aspect-ratio: 16/9;
+      }
+      .modal {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .nav-menu {
+      transition: transform 0.3s ease;
+      }
+      .nav-menu.open {
+      transform: translateX(0);
+      }
+    </style>
   </head>
-  <body>
-    <!-- Full HTML content will be placed here -->
+  <body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 bg-white z-50 shadow-sm">
+      <div class="flex justify-between items-center px-4 py-3">
+        <div class="font-['Pacifico'] text-primary text-2xl">logo</div>
+        <button
+          id="menu-toggle"
+          class="w-10 h-10 flex items-center justify-center cursor-pointer"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Navigation Menu -->
+    <div
+      id="nav-menu"
+      class="nav-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform translate-x-full"
+    >
+      <div class="p-4 flex justify-end">
+        <button
+          id="close-menu"
+          class="w-10 h-10 flex items-center justify-center cursor-pointer"
+        >
+          <i class="ri-close-line ri-lg"></i>
+        </button>
+      </div>
+      <ul class="px-4 py-2">
+        <li class="py-3 border-b border-gray-100">
+          <a href="#home" class="block text-lg font-medium">Home</a>
+        </li>
+        <li class="py-3 border-b border-gray-100">
+          <a href="#about" class="block text-lg font-medium">About Me</a>
+        </li>
+        <li class="py-3 border-b border-gray-100">
+          <a href="#portfolio" class="block text-lg font-medium">Portfolio</a>
+        </li>
+        <li class="py-3 border-b border-gray-100">
+          <a href="#process" class="block text-lg font-medium">Process</a>
+        </li>
+        <li class="py-3">
+          <a href="#contact" class="block text-lg font-medium">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Content Container -->
+    <div class="pt-14 pb-16">
+      <!-- Space for fixed nav and tab bar -->
+      <!-- Hero Section -->
+      <section id="home" class="px-4 pt-8 pb-12">
+        <div class="flex flex-col items-center text-center">
+          <h1 class="text-4xl font-bold leading-tight mb-4">
+            YouTube Thumbnails <br />That Drive
+            <span class="text-primary">Clicks</span>
+          </h1>
+          <p class="text-gray-600 mb-8 max-w-xs">
+            Helping content creators boost engagement with scroll-stopping
+            thumbnail designs
+          </p>
+          <div
+            class="mb-8 w-full max-w-xs overflow-hidden rounded-lg shadow-lg"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=Professional%20YouTube%20thumbnail%20design%20with%20bold%20text%20and%20vibrant%20colors%2C%20showing%20a%20tech%20product%20review%20with%20high%20contrast%20and%20eye-catching%20elements%2C%20digital%20marketing%20design%2C%20high%20quality%20thumbnail&width=600&height=338&seq=1&orientation=landscape"
+              alt="Featured Thumbnail"
+              class="w-full h-auto"
+            />
+          </div>
+          <div class="flex flex-col gap-4 w-full max-w-xs">
+            <a
+              href="#portfolio"
+              class="bg-primary text-white py-3 px-6 rounded-button font-medium text-center shadow-md hover:bg-opacity-90 transition-all cursor-pointer"
+              >View Portfolio</a
+            >
+            <a href="#contact" class="text-primary font-medium cursor-pointer"
+              >Let's Work Together</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="px-4 py-12 bg-gray-50">
+        <div class="max-w-md mx-auto">
+          <h2 class="text-2xl font-bold mb-6 text-center">About Me</h2>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col items-center mb-6">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-md"
+              >
+                <img
+                  src="https://readdy.ai/api/search-image?query=professional%20headshot%20portrait%20of%20a%20young%20creative%20graphic%20designer%20in%20casual%20attire%2C%20looking%20confident%20and%20approachable%2C%20natural%20lighting%2C%20studio%20background%2C%20high%20quality%20professional%20photo&width=300&height=300&seq=8&orientation=squarish"
+                  alt="Profile Picture"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h3 class="text-lg font-medium text-primary mb-1">
+                Michael Chen
+              </h3>
+              <p class="text-gray-500 text-sm">Founder of g-graficx</p>
+            </div>
+            <p class="mb-4 text-gray-700">
+              I'm a freelance graphic designer specializing exclusively in
+              YouTube thumbnail design. With over 5 years of experience, I've
+              helped content creators increase their CTR by an average of 40%.
+            </p>
+            <p class="mb-4 text-gray-700">
+              At g-graficx, I focus on creating visuals that not only catch the
+              viewer's eye but also accurately represent your content while
+              driving engagement.
+            </p>
+            <p class="text-gray-700">
+              My designs have helped YouTubers from various niches including
+              tech reviews, gaming, lifestyle, and educational content reach
+              wider audiences and grow their channels.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="px-4 py-12">
+        <h2 class="text-2xl font-bold mb-6 text-center">Portfolio</h2>
+        <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
+          <div
+            class="portfolio-item overflow-hidden rounded-lg shadow-sm cursor-pointer"
+            data-title="Tech Review Thumbnail"
+            data-description="Increased CTR by 52% for a smartphone review video"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=YouTube%20thumbnail%20for%20tech%20review%2C%20smartphone%20comparison%20with%20bold%20text%20overlay%2C%20vibrant%20colors%2C%20clean%20design%2C%20professional%20thumbnail%20with%20high%20contrast%20elements&width=300&height=169&seq=2&orientation=landscape"
+              alt="Tech Review Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="portfolio-item overflow-hidden rounded-lg shadow-sm cursor-pointer"
+            data-title="Gaming Thumbnail"
+            data-description="Helped a gaming channel grow from 10K to 50K subscribers"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=YouTube%20gaming%20thumbnail%20with%20character%20from%20popular%20video%20game%2C%20bold%20text%2C%20vibrant%20colors%2C%20action%20scene%2C%20professional%20thumbnail%20with%20high%20contrast%20elements&width=300&height=169&seq=3&orientation=landscape"
+              alt="Gaming Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="portfolio-item overflow-hidden rounded-lg shadow-sm cursor-pointer"
+            data-title="Lifestyle Vlog Thumbnail"
+            data-description="Consistent design style across 50+ videos for a lifestyle channel"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=YouTube%20lifestyle%20vlog%20thumbnail%20showing%20travel%20destination%2C%20person%20with%20surprised%20expression%2C%20bold%20text%20overlay%2C%20vibrant%20colors%2C%20professional%20thumbnail&width=300&height=169&seq=4&orientation=landscape"
+              alt="Lifestyle Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="portfolio-item overflow-hidden rounded-lg shadow-sm cursor-pointer"
+            data-title="Tutorial Thumbnail"
+            data-description="Educational content thumbnail with 45% higher CTR than channel average"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=YouTube%20tutorial%20thumbnail%20with%20step-by-step%20graphic%2C%20bold%20text%20overlay%2C%20clean%20design%2C%20professional%20thumbnail%20with%20high%20contrast%20elements%2C%20educational%20content&width=300&height=169&seq=5&orientation=landscape"
+              alt="Tutorial Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="portfolio-item overflow-hidden rounded-lg shadow-sm cursor-pointer"
+            data-title="Product Review Thumbnail"
+            data-description="Helped client achieve 1M+ views with compelling thumbnail design"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=YouTube%20product%20review%20thumbnail%20with%20close-up%20of%20product%2C%20reaction%20face%2C%20bold%20text%20overlay%2C%20vibrant%20colors%2C%20professional%20thumbnail%20with%20high%20contrast%20elements&width=300&height=169&seq=6&orientation=landscape"
+              alt="Product Review Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="portfolio-item overflow-hidden rounded-lg shadow-sm cursor-pointer"
+            data-title="News & Commentary Thumbnail"
+            data-description="Increased engagement for a news channel by 38% with consistent branding"
+          >
+            <img
+              src="https://readdy.ai/api/search-image?query=YouTube%20news%20commentary%20thumbnail%20with%20headline%20text%2C%20presenter%20reaction%2C%20bold%20colors%2C%20professional%20thumbnail%20with%20high%20contrast%20elements%2C%20current%20events&width=300&height=169&seq=7&orientation=landscape"
+              alt="News Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Process Section -->
+      <section id="process" class="px-4 py-12 bg-gray-50">
+        <h2 class="text-2xl font-bold mb-6 text-center">My Process</h2>
+        <div class="max-w-md mx-auto">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-start mb-6">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+              >
+                <i class="ri-chat-1-line ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-medium text-lg mb-2">
+                  1. Understand Your Content
+                </h3>
+                <p class="text-gray-600">
+                  I start by learning about your content, target audience, and
+                  channel style to ensure thumbnails align with your brand.
+                </p>
+              </div>
+            </div>
+            <div class="w-full h-px bg-gray-200 my-6"></div>
+            <div class="flex items-start mb-6">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+              >
+                <i class="ri-paint-brush-line ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-medium text-lg mb-2">
+                  2. Design for Emotion & CTR
+                </h3>
+                <p class="text-gray-600">
+                  Creating thumbnails that trigger curiosity and emotional
+                  response while maintaining content relevance.
+                </p>
+              </div>
+            </div>
+            <div class="w-full h-px bg-gray-200 my-6"></div>
+            <div class="flex items-start mb-6">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+              >
+                <i class="ri-time-line ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-medium text-lg mb-2">3. Fast Turnaround</h3>
+                <p class="text-gray-600">
+                  Most projects completed within 24-48 hours, with revisions
+                  included to ensure your satisfaction.
+                </p>
+              </div>
+            </div>
+            <div class="w-full h-px bg-gray-200 my-6"></div>
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+              >
+                <i class="ri-rocket-line ri-lg text-primary"></i>
+              </div>
+              <div>
+                <h3 class="font-medium text-lg mb-2">4. Deliver & Optimize</h3>
+                <p class="text-gray-600">
+                  Providing high-resolution files ready for upload, with
+                  follow-up performance analysis if needed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="px-4 py-12">
+        <h2 class="text-2xl font-bold mb-6 text-center">Get In Touch</h2>
+        <div class="max-w-md mx-auto">
+          <form id="contact-form" class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="mb-4">
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                for="project"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Project Details</label
+              >
+              <select
+                id="project"
+                class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent appearance-none bg-white"
+                required
+              >
+                <option value="" disabled selected>Select project type</option>
+                <option value="single">Single Thumbnail</option>
+                <option value="package">Package (5+ Thumbnails)</option>
+                <option value="ongoing">Ongoing Collaboration</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+                >
+                  <i class="ri-arrow-down-s-line text-gray-400"></i>
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label
+                for="message"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-primary text-white py-3 px-6 rounded-button font-medium text-center shadow-md hover:bg-opacity-90 transition-all cursor-pointer"
+            >
+              Send Message
+            </button>
+          </form>
+          <div class="mt-8 text-center">
+            <p class="text-gray-600 mb-4">
+              Available for freelance YouTube thumbnail work
+            </p>
+            <div class="flex justify-center space-x-4">
+              <a
+                href="mailto:contact@g-graficx.com"
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-600 hover:bg-gray-200 transition-all cursor-pointer"
+              >
+                <i class="ri-mail-line ri-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-600 hover:bg-gray-200 transition-all cursor-pointer"
+              >
+                <i class="ri-instagram-line ri-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full text-gray-600 hover:bg-gray-200 transition-all cursor-pointer"
+              >
+                <i class="ri-behance-line ri-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Tab Bar -->
+    <div
+      class="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-md z-40"
+    >
+      <div class="grid grid-cols-5 h-16">
+        <a
+          href="#home"
+          class="flex flex-col items-center justify-center cursor-pointer"
+        >
+          <i class="ri-home-5-line ri-lg mb-1"></i>
+          <span class="text-xs">Home</span>
+        </a>
+        <a
+          href="#about"
+          class="flex flex-col items-center justify-center cursor-pointer"
+        >
+          <i class="ri-user-line ri-lg mb-1"></i>
+          <span class="text-xs">About</span>
+        </a>
+        <a
+          href="#portfolio"
+          class="flex flex-col items-center justify-center cursor-pointer"
+        >
+          <i class="ri-gallery-line ri-lg mb-1"></i>
+          <span class="text-xs">Portfolio</span>
+        </a>
+        <a
+          href="#process"
+          class="flex flex-col items-center justify-center cursor-pointer"
+        >
+          <i class="ri-flow-chart-line ri-lg mb-1"></i>
+          <span class="text-xs">Process</span>
+        </a>
+        <a
+          href="#contact"
+          class="flex flex-col items-center justify-center cursor-pointer"
+        >
+          <i class="ri-mail-send-line ri-lg mb-1"></i>
+          <span class="text-xs">Contact</span>
+        </a>
+      </div>
+    </div>
+    <!-- Portfolio Modal -->
+    <div
+      id="portfolio-modal"
+      class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 opacity-0 invisible"
+    >
+      <div class="bg-white rounded-lg w-11/12 max-w-md overflow-hidden">
+        <div
+          class="p-4 border-b border-gray-200 flex justify-between items-center"
+        >
+          <h3 id="modal-title" class="font-medium text-lg">Thumbnail Title</h3>
+          <button
+            id="close-modal"
+            class="w-8 h-8 flex items-center justify-center cursor-pointer"
+          >
+            <i class="ri-close-line ri-lg"></i>
+          </button>
+        </div>
+        <div class="p-4">
+          <div class="mb-4 overflow-hidden rounded-lg">
+            <img
+              id="modal-image"
+              src=""
+              alt="Thumbnail Preview"
+              class="w-full h-auto"
+            />
+          </div>
+          <p id="modal-description" class="text-gray-700">
+            Thumbnail description goes here.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Success Message -->
+    <div
+      id="success-message"
+      class="fixed inset-x-0 bottom-20 flex justify-center items-center z-50 opacity-0 invisible transition-all duration-300"
+    >
+      <div
+        class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center"
+      >
+        <i class="ri-check-line ri-lg mr-2"></i>
+        <span>Message sent successfully!</span>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script id="navigation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const closeMenu = document.getElementById("close-menu");
+        const navMenu = document.getElementById("nav-menu");
+        const navLinks = navMenu.querySelectorAll("a");
+        menuToggle.addEventListener("click", function () {
+          navMenu.classList.add("open");
+        });
+        closeMenu.addEventListener("click", function () {
+          navMenu.classList.remove("open");
+        });
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            navMenu.classList.remove("open");
+          });
+        });
+      });
+    </script>
+    <script id="portfolio-modal-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        const modal = document.getElementById("portfolio-modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalImage = document.getElementById("modal-image");
+        const modalDescription = document.getElementById("modal-description");
+        const closeModal = document.getElementById("close-modal");
+        portfolioItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const title = this.getAttribute("data-title");
+            const description = this.getAttribute("data-description");
+            const imageSrc = this.querySelector("img").src;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalImage.src = imageSrc;
+            modal.classList.remove("invisible");
+            modal.classList.add("opacity-100");
+          });
+        });
+        closeModal.addEventListener("click", function () {
+          modal.classList.remove("opacity-100");
+          modal.classList.add("invisible");
+        });
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.classList.remove("opacity-100");
+            modal.classList.add("invisible");
+          }
+        });
+      });
+    </script>
+    <script id="contact-form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        const successMessage = document.getElementById("success-message");
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Simulate form submission
+          setTimeout(function () {
+            // Reset form
+            contactForm.reset();
+            // Show success message
+            successMessage.classList.remove("invisible");
+            successMessage.classList.add("opacity-100");
+            // Hide success message after 3 seconds
+            setTimeout(function () {
+              successMessage.classList.remove("opacity-100");
+              successMessage.classList.add("invisible");
+            }, 3000);
+          }, 1000);
+        });
+      });
+    </script>
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 60,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
+
